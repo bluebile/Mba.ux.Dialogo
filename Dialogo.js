@@ -513,7 +513,7 @@ Ext.define('Mba.ux.Dialogo', {
 				titulo : null,
 				btnOK : true,
 				btnFechar : false,
-				textoOK : MecMbaLocale.get('mensagem.ok'),
+				textoOK : MbaLocale.get('mensagem.ok'),
 				funcaoOK : function(){ return true; }
 			};
 
@@ -552,9 +552,9 @@ Ext.define('Mba.ux.Dialogo', {
 				titulo : null,
 				btnOK : opcoes.btnOk || false,
 				btnFechar : false,
-				textoOK : opcoes.textoOK || MecMbaLocale.get('mensagem.ok'),
+				textoOK : opcoes.textoOK || MbaLocale.get('mensagem.ok'),
 				funcaoOK : function(){ return true; },
-				textoCancelar : opcoes.textoCancelar || MecMbaLocale.get('mensagem.cancelar'),
+				textoCancelar : opcoes.textoCancelar || MbaLocale.get('mensagem.cancelar'),
 				funcaoCancelar : function(){ return true; },
 				xtypeTextfield : 'textfield'
 			};
@@ -594,9 +594,9 @@ Ext.define('Mba.ux.Dialogo', {
 				titulo : null,
 				btnOK : true,
 				btnFechar : false,
-				textoOK : MecMbaLocale.get('mensagem.sim'),
+				textoOK : MbaLocale.get('mensagem.sim'),
 				funcaoOK : function(){ return true; },
-				textoCancelar : MecMbaLocale.get('mensagem.nao'),
+				textoCancelar : MbaLocale.get('mensagem.nao'),
 				funcaoCancelar : function(){ return true; }
 			};
 
