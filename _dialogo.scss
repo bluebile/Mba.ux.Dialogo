@@ -1,0 +1,538 @@
+$corBordaCinza : #a5a9ae;
+$bgToastMensagemErro: #FF7182;
+$bgToastMensagemSucesso: #AFCF2C;
+$bgNotification: #333333;
+$cinzaEscuro: #707789;
+$cinzaBackground: #eee;
+$branco: #ffffff;
+$azulTitleBar: #01a5da;
+$paddingLateralTela: 0 16px;
+
+.dialogo {
+		$corLinha : #D2D4DA;
+		&.dialogoPrompt, &.dialogoConfirm, &.dialogoAlert  {
+
+		.areaTituloDialogo {
+     		.tituloDialogo {
+				padding-top: 15px;
+                height: 50px;
+                background: #01a5da;
+                border-bottom: 3px solid #afcf2c;
+                border-radius: 6px 6px 0 0;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 16px;
+                color: $branco;
+			}
+
+		}
+
+		.areaPromptDialogo{
+			margin-top: 0px;
+			background: $cinzaBackground;
+			padding: $paddingLateralTela;
+			padding-bottom: 14px;
+
+		}
+
+        .tituloDialogo{
+            margin-bottom: 0;
+        }
+
+	}
+
+	&.fadeOut {
+		$opacidade : opacity 500ms linear;
+
+		-webkit-transition: $opacidade;
+	    -ms-transition: $opacidade;
+	    transition: $opacidade;
+		opacity: 0;
+	}
+
+	&.fadeIn {
+
+		$opacidade : fadein 500ms;
+
+	   -webkit-animation: $opacidade; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: $opacidade; /* Firefox < 16 */
+       -ms-animation: $opacidade; /* Internet Explorer */
+       -o-animation: $opacidade; /* Opera < 12.1 */
+        animation: $opacidade;
+	}
+
+    &.dialogoNotification {
+        transform: none;
+        -webkit-transform: none;
+        position: fixed !important;
+        top: 0px;
+        left: 0px;
+        border-radius: 0px;
+        width: 100%;
+        max-width: 100%;
+        min-width:0;
+        height: 95px;
+
+        vertical-align: middle;
+        
+        -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.1);
+
+        &.notification {
+            background: rgba(51, 51, 51, .8);
+        }
+
+
+        .areaTituloDialogo {
+            width: 100%;
+        }
+
+        .tituloDialogo{
+            height: 90px;
+
+            .x-button-label {
+                padding: 0 30px;
+                font-size: 13px;
+                font-weight: normal;
+                line-height: 19px;
+                font-family: $font-family;
+                color: $branco;
+                text-shadow: none;
+                white-space: normal;
+            }
+
+        }
+
+        .botaoFecharDialogo {
+            margin: 10px 0px 0px 0px;
+
+        }
+
+        .iconeFecharDialogo {
+            &:before {
+                opacity: .35;
+            }
+        }
+
+    }
+
+    &.dialogoConfirm, &.dialogoAlert {
+
+        .botaoFecharDialogo.x-button.x-button-plain {
+            position: absolute;
+            top: 13px;
+            right: 0;
+            height: 30px;
+            width: 30px;
+            padding: 0;
+            border-radius: 0;
+        }
+    }
+
+	&.dialogoToast {
+	    transform: none;
+		-webkit-transform: none;
+	    position: fixed !important;
+	    top: 0px;
+	    left: 0px;
+	    border-radius: 0px;
+	    width: 100%;
+	    max-width: 100%;
+	    min-width:0;
+        height: 95px;
+
+	    vertical-align: middle;
+	    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.1);
+		-moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.1);
+		box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.1);
+
+	    &.erro {
+	     	background: $bgToastMensagemErro;
+	    }
+
+	    &.sucesso {
+	     	background: $bgToastMensagemSucesso;
+	    }
+
+	    .areaTituloDialogo {
+			width: 100%;
+	    }
+
+	    .tituloDialogo{
+            display: table;
+            width: 100%;
+            height: 95px;
+            padding: 0 15px;
+	        font-family: $font-family;
+		    color: $branco;
+		    font-size: 14px;
+		    text-shadow: none;
+		    font-weight: 200;
+            line-height: 20px;
+		    text-align: center;
+
+            .x-innerhtml {
+                display: table-cell;
+                vertical-align: middle;
+            }
+	    }
+
+	    .botaoFecharDialogo.x-button.x-button-plain {
+	    	margin: 10px 0px 0px 0px;
+            position: absolute;
+            top: 23px;
+            right: 5px;
+            height: 25px;
+            width: 25px;
+            background: #848484;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 22px;
+	    }
+
+	    .iconeFecharDialogo{
+    		height: 30px !important;
+	    	color: $branco !important;
+	    }
+
+	}
+
+    & > .x-dock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 35%;
+        background: #eee;
+        border-radius: 6px;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        box-shadow: 0 16px 28px 0 rgba(0,0,0,.22) , 0 25px 55px 0 rgba(0,0,0,.21);
+    }
+
+    &.dialogoPrompt {
+        & > .x-dock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 50%;
+            background: #eee;
+            border-radius: 6px;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            box-shadow: 0 16px 28px 0 rgba(0,0,0,.22) , 0 25px 55px 0 rgba(0,0,0,.21);
+        }
+    }
+
+    &.dialogoUnidades > .xdock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 85%;
+        height: 85%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        box-shadow: 0 16px 28px 0 rgba(0,0,0,.22) , 0 25px 55px 0 rgba(0,0,0,.21);
+    }
+
+    &.dialogoPrompt > .x-body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        height: 50%;
+        background: #eee;
+        border-radius: 6px;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        box-shadow: 0 16px 28px 0 rgba(0,0,0,.22) , 0 25px 55px 0 rgba(0,0,0,.21);
+    }
+
+    &.dialogoLoading {
+        background: rgba(255,255,255, 1) center center no-repeat;
+    }
+
+	z-index : 20;
+
+	top: 0;
+	left: 0;
+
+    width: 100%;
+	height: 100%;
+	min-width: 300px;
+
+    background-color: rgba(40, 51, 66, 0.5);
+ 	.areaMensagemDialogo
+   {
+		margin-top : 20px;
+	}
+
+	.areaBotoesDialogo {
+		height: 40px;
+        margin: 0 8px 20px 8px;
+	}
+
+    .botaoOkDialogo {
+        height: 45px;
+        font-size: 16px;
+        background: #AFCF2C;
+        border: 0;
+        width: 100%;
+        margin-top: 8px;
+
+        &.x-button-pressing {
+            background: darken(#AFCF2C, 5%);
+        }
+        .x-button-label {
+            color: $branco;
+        }
+    }
+
+	.botaoCancelarDialogo {
+		@extend .botaoDialogo;
+
+		height: 40px;
+		font-size: 16px;
+		background: #FF7182;
+		border-radius: 5px;
+		border: 0;
+		&.x-button-pressing {
+		    background: darken(#FF7182, 5%);
+		}
+		.x-button-label {
+		    color: $branco;
+		}
+	}
+
+    .botaoFecharDialogo.x-button.x-button-plain {
+        position: absolute;
+        top: 13px;
+        right: 0;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        border-radius: 0;
+    }
+
+
+    .iconeFecharDialogo {
+        height: 30px !important;
+        width: 30px !important;
+
+        &:before {
+            font-family: 'FontAwesome';
+            content: "\f00d";
+            color: $branco;
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+    }
+
+
+	/* texto */
+	.textoDialogo {
+		text-align : center;
+		font-family: $font-family;
+	}
+
+	.tituloDialogo {
+		@extend .textoDialogo;
+		font-weight: bold;
+		font-size: 18px;
+		color: #0062a3;
+		margin-bottom: 15px;
+	}
+
+	.mensagemDialogo {
+		@extend .textoDialogo;
+        margin: 0 5px;
+        font-size: 15px;
+        color: #333333;
+        line-height: 22px;
+	}
+
+	&.toast {
+		.areaMensagemDialogo {
+			margin-top: 0;
+		}
+
+		.mensagemDialogo {
+			@extend .textoDialogo;
+
+			font-size: 22px;
+			color: #0062a3;
+		}
+
+	}
+
+	&.showcase{
+		width:100%;
+		top: 0;
+	  	bottom: 0;
+	  	left: 0;
+	  	background: transparent;
+	  	transform: initial;
+	  	padding: 0 10px;
+	}
+
+
+	&.loading {
+	
+	}
+
+	.img_loading_popup {
+	   	margin-bottom: 5px;
+	 }
+
+}
+
+/* Botoes */
+
+.botaoAcao {
+    position: relative;
+    bottom: 0;
+    padding: 14px 10px;
+    font-size: 16px;
+    background: #AFCF2C;
+    border: 0;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 0;
+
+    &.x-button-pressing {
+        background: darken(#AFCF2C, 5%);
+    }
+    .x-button-label {
+        color: $branco;
+    }
+}
+
+.botaoAdicionarItem {
+    margin: 10px 10px 2px;
+    height: 30px;
+    background: #afcf2c;
+    font-size: 14px;
+    color: $branco;
+    border-radius: 5px;
+    border: 0;
+
+    &.x-button-pressing {
+        background: darken(#AFCF2C, 5%);
+    }
+
+}
+
+.item-unidade {
+    padding: 12px 10px;
+    text-align: center;
+
+    .x-button {
+        display: inline-block;
+        padding: 5px 25px 5px 18px;
+        margin: 0 5px 2px 0;
+        min-height: initial;
+        background-color: $azulTitleBar;
+        background-image: none;
+        border: 0;
+        border-radius: 4px;
+        color: $branco;
+
+        .x-button-label {
+            font-family: $font-family;
+            font-size: 11px;
+            font-weight: normal;
+            line-height: 12px;
+
+            &:after {
+                position: absolute;
+                right: 7px;
+                font-family: 'FontAwesome';
+                content: "\f00d";
+                color: darken($azulTitleBar, 10%);
+                font-size: 11px;
+            }
+
+        }
+
+
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .dialogo {
+        &.dialogoPrompt > .x-body {
+            height: 36%;
+        }
+    }
+
+}
+
+// loading animation spinner
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #01A5DA;
+
+  border-radius: 100%;
+  -webkit-animation: escala 1.0s infinite ease-in-out;
+  animation: escala 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes escala {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes escala {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

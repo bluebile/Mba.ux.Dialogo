@@ -1,0 +1,38 @@
+{
+    "name": "Mba.ux.Dialogo",
+    "version": "0.0.1",
+    "homepage": "https://github.com/bluebile/Mba.ux.Dialogo",
+    "authors": [
+        "Bluebile <info@bluebile.com>"
+    ],
+    "description": "Componente de Dialogo para apps sencha touch",
+    "main": [
+        "Dialogo.js"
+    ],
+    "keywords": [
+        "senchatouch",
+        "extjs",
+        "ux",
+        "model",
+        "data",
+        "dialogo"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "demo",
+        "ux",
+        "**/*.*~",
+        "Gruntfile.js",
+        "bower.json",
+        "package.json",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "Mba.ux.Locale": "v0.0.1"
+    },
+    "requires": ["Mba.ux.Dialogo"]
+}
