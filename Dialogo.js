@@ -36,6 +36,20 @@ Ext.define('Mba.ux.Dialogo', {
 
 		tipo : 0,
 
+
+        bloquearTela: function(callback, scope) {
+            if (!Ext.application.maskBody) {
+                Ext.application.maskBody = Ext.create('Ext.Mask', {
+                    renderTo: Ext.getBody()
+                });
+                }
+                Ext.application.maskBody.show();
+        },
+
+        liberarTela: function() {
+            Ext.application.maskBody && Ext.application.maskBody.hide();
+        },
+
 		_create :function ( options ) {
 
 			if( Mba.Dialogo._closeAll ){
@@ -266,7 +280,7 @@ Ext.define('Mba.ux.Dialogo', {
 		_show : function ( dialogo, bloquearTela) {
 
             if (bloquearTela)
-			    Mba.app.bloquearTela();
+			   this.bloquearTela();
 
 			dialogo.removeCls('fadeOut');
 			dialogo.addCls('fadeIn');
@@ -283,7 +297,7 @@ Ext.define('Mba.ux.Dialogo', {
 		},
 
 		_hide : function ( dialogo ) {
-
+            var me=this;
 			var dialogoId = null;
 			if ( dialogo ) {
 				dialogoId = dialogo.getId();
@@ -301,7 +315,7 @@ Ext.define('Mba.ux.Dialogo', {
 				var fecharELiberar = function(){
 					dialogo.destroy();
 					if( lengthDialogosAbertos == 0) {
-						Mba.app.liberarTela();
+						me.liberarTela();
 					}
 				};
 
@@ -331,7 +345,7 @@ Ext.define('Mba.ux.Dialogo', {
 					}
 					d.destroy();
 				}
-				Mba.app.liberarTela();
+				this.liberarTela();
 				Mba.Dialogo._dialogosAbertos = [];
 			}
 
