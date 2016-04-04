@@ -248,6 +248,26 @@ Ext.define('Mba.ux.Dialogo', {
 					handler : handlerBotaoOK
 				}];
 
+				if ( options.tipo == Mba.Dialogo._tipos.CONFIRM
+						|| options.tipo == Mba.Dialogo._tipos.PROMPT ) {
+					botoes.push({
+						xtype : 'button',
+						ui: 'plain',
+						cls : ['botaoCancelarDialogo'],
+						text : options.textoCancelar,
+						handler : function() {
+							console.log('botaoCancelarDialogo, options.funcaoCancelar = ' + options.funcaoCancelar);
+
+							var deveFechar = options.funcaoCancelar();
+
+							console.log('botaoCancelarDialogo, deveFechar = ' + deveFechar);
+
+							if ( deveFechar ) Mba.Dialogo._hide( dialogo );
+						}
+					});
+				}
+
+
 				if(options.btnOK) {
 					itensDialogo.push({
 						xtype : 'container',
