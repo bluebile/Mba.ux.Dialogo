@@ -32,7 +32,7 @@
         "tests"
     ],
     "dependencies": {
-        "Mba.ux.Locale": "v0.0.1"
+        "Mba.ux.Locale": "v0.0.5"
     },
     "requires": ["Mba.ux.Dialogo"]
 }
